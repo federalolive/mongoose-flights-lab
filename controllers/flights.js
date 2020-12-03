@@ -7,7 +7,7 @@ module.exports = {
 }
 
 function newFlight(req, res) {
-    res.render('flights/new', {err: ''})
+    res.render('flights/new', {err: '', title: New Flight})
 }
 
 function create(req, res){
@@ -20,12 +20,12 @@ function create(req, res){
         return res.render('flights/new', {err:err})
     } 
     console.log(flight)
-    res.redirect('/flights')
+    res.redirect('/flights', {title: Flights})
   })
 }
 
 function index(req, res){
     Flight.find({}, function(err, flights){
-        res.render('flights/index', {flights:flights})
+        res.render('flights/index', {flights:flights, title: Flights})
     })
 }
