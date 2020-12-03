@@ -10,7 +10,11 @@
     <h2>Enter a New Flight</h2>
 <form action="/flights" method="POST">
   <label>Airline:
-    <input type="text" name="airline">
+    <select name="airline">
+        <option value="Southwest">Southwest</option>
+        <option value="American">American</option>
+        <option value="United">United</option>
+      </select>
   </label><br>
   <label>Airport:
     <select name="airport">
@@ -21,15 +25,13 @@
         <option value="SAN">SAN</option>
       </select>
     </label><br>
-  <label>flightNo
+  <label>Flight Number:
     <input type="text" name="flightNo">
-  <label>Cast (separate actors with commas):
-    <input type="text" name="cast">
   </label><br>
-  <label>Now Showing:
-    <input type="checkbox" name="nowShowing" checked>
+  <label>Departs:
+    <input type="date" name="departs">
   </label><br>
-  <input type="submit" value="Add Movie">
+  <input type="submit" value='Add Flght'>
 </form>
 </body>
 </html>
