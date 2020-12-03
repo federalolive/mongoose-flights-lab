@@ -1,4 +1,4 @@
-<%- include('../partials/head.ejs') %> 
+<%- include('../partials/head') %> 
     <h2>Enter a New Flight</h2>
 <form action="/flights" method="POST">
   <label>Airline:
@@ -26,4 +26,4 @@
   <input type="submit" value='Add Flght'>
 </form>
 <h1><%= err %></h1>
-<%- include('../partials/footer.ejs') %>
+<%- include('../partials/footer') %>
