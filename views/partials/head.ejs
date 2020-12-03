@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +11,8 @@
 <nav>
     <ul>
         <a href="/">Home</a>
-        <a href="/flights">All Flights</a>
-        <a href="/flights/new">Add Flight</a>
+        <a href="/flights/new" <%- title === 'Add Flight' ? 'class="active"' : '' %>>Add Flight</a>
+        <a href="/flights" <%- title === 'All Flights' ? 'class="active"' : '' %>>All Flights</a>
     </ul>
 </nav>
 <main>
