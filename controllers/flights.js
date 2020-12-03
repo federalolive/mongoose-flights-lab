@@ -13,11 +13,12 @@ function newFlight(req, res) {
 function create(req, res){
     const flight = new Flight(req.body)
     flight.save(function(err) {
-    if (err) return res.render('flights/new')
+    if (err){
+        return res.render('flights/new', {err:err})
+    } 
     console.log(flight)
     res.redirect('/flights')
   })
-    res.render('/flights')
 }
 
 function index(req, res){
