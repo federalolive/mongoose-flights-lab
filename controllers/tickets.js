@@ -1,4 +1,5 @@
 const Flight = require('../models/flight')
+const flights = require('./flights')
 
 module.exports = {
     create,
@@ -14,8 +15,13 @@ function create(req, res) {
 }
 
 function deleteTicket(req, res){
-    Flight.findById(req.params.id, function(err, id){
-        Flight.splice(id, 1)
-        res.redirect(`/flights/${flight._id}`)
+    Flight.findById(req.params.flightId)
+    .then((flight) => {
+        const idx = flight.tickets.findIndex(ticket => ticket._id == req.params.ticketId)
+        flights.tickets.splice(idx, 1)
+        flight.save()
+        .then(()=> {
+            res.redirect(`/flights/${flight._id}`)
+        })
     })
 }
