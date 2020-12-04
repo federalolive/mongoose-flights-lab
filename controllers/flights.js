@@ -22,7 +22,7 @@ function create(req, res){
         return res.render('flights/new', {err:err, title:'Add Flight'})
     } 
     console.log(flight)
-    res.redirect('/flights', {title: 'Flights'})
+    res.redirect('/flights')
   })
 }
 
