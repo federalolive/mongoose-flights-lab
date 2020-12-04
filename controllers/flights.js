@@ -4,7 +4,7 @@ module.exports = {
     new: newFlight,
     create, 
     index,
-    show
+    show,
 }
 
 function newFlight(req, res) {
@@ -36,3 +36,4 @@ function show(req,res){
         res.render('flights/show', {title: 'Flight Details', flight})
     })
 }
+
