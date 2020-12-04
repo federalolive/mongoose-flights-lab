@@ -14,7 +14,8 @@ function create(req, res) {
 }
 
 function deleteTicket(req, res){
-    Flight.findByIdAndDelete(req.params.id, function(err, flight){
+    Flight.findById(req.params.id, function(err, id){
+        Flight.splice(id, 1)
         res.redirect(`/flights/${flight._id}`)
     })
 }
