@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const departuresCtrl = require('../controllers/departures')
+const destinationsCtrl = require('../controllers/destinations')
 
 
 module.exports = router
