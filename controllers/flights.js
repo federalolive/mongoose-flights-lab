@@ -31,15 +31,13 @@ function index(req, res){
 }
 
 function show(req,res){
-    Flight.findById(req.params.id,)
+    Flight.findById(req.params.id)
     .populate('airport').exec(function(err, flight){
-        Destination.find(
-            {_id: {$nin: flight.airport}},
+        Destination.find({_id: {$nin: flight.airport}},
             function(err, destinations){
-                console.log(destinations);
+                console.log(destinations)
                 res.render('flights/show',{title: 'Flight Details', flight, destinations})
-            }
-        )
+            })
     })
 }
 
