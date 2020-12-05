@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const destinationSchema = {
-
+    airport: {type: String, required: true, unique: true},
 }
 
-module.exports = mongoose.model('Destinations', destinationSchema)
+module.exports = mongoose.model('Destination', destinationSchema)
