@@ -5,7 +5,7 @@ module.exports = {
     create, 
     index,
     show,
-    delete: deleteFlight
+    delete: deleteOne
 }
 
 function newFlight(req, res) {
@@ -38,7 +38,8 @@ function show(req,res){
     })
 }
 
-function deleteFlight(req, res){
-    Flight.findByIdAndDelete(req.params.id)
-        .then(res.redirect('/flights'))
+function deleteOne(req, res){
+    Flight.findByIdAndDelete(req.params.id, function(err, flight){
+        res.redirect('/flights')
+    })
 }
