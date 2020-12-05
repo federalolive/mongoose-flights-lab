@@ -17,9 +17,9 @@
 <form id="add-ticket-form" method="POST"
   action="/flights/<%= flight._id %>/tickets">
   <label>Seat:</label>
-  <input name="seat" required pattern="[A-F][1-9]\d?">
+  <input name="seat" required pattern="[A-F][1-9]\d?" oninput="this.value = this.value.toUpperCase()">
   <label>Price:</label>
-  <input type="text" name='price'>
+  <input type="text" name='price' placeholder="$...">
   <input type="submit" value="Add Ticket" class='submitBtn'>
 </form>
 
