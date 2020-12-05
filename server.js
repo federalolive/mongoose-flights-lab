@@ -11,7 +11,7 @@ require('./config/database');
 var indexRouter = require('./routes/index');
 var flightsRouter = require('./routes/flights');
 const ticketsRouter = require('./routes/tickets');
-const destinationsRouter = require('./routes/destintions');
+const destinationsRouter = require('./routes/destinations');
 
 var app = express();
 

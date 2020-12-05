@@ -1,5 +1,16 @@
 <%- include('../partials/head') %> 
-<p>Please ensure that you location, is not already listed in the drop down</p>
+<p>Please first ensure that the Destination is not in the dropdown
+    <select>
+      <% destinations.forEach(function(d) { %>
+        <option><%= d.airport %></option>
+      <% }) %>
+    </select>
+  </p>
+  <form id="add-destination-form" action="/destinations" method="POST">
+    <label>Airport:</label>
+    <input type="text" name="airport"  onkeyup="this.value = this.value.toUppercase()">
+    <input type="submit" value="Add Destination">
+  </form>
 
 
 

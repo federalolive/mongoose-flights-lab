@@ -1,10 +1,18 @@
 const Destination = require('../models/destination')
 const Flight = require('../models/flight')
 
-module.export = {
+module.exports = {
     new: newDestination,
+    create,
 }
 
 function newDestination(req, res){
-    res.render('destinations/new', {err: '', title: 'New Destination'})
+    Destination.find({}, function(err, destinations) {
+        res.render('destinations/new', {title: 'Add Destination', destinations})
+    })
+}
+function create(req, res){
+    Destination.create(req.body, function(err, destinations){
+        res.redirect('/destinations/new')
+    })
 }
