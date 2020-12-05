@@ -1,4 +1,4 @@
-const Departure = require('../models/destination')
+const Destination = require('../models/destination')
 
 module.export = {
     
