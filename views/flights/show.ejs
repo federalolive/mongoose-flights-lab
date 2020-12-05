@@ -3,7 +3,11 @@
     <div>Airline: </div>
     <div><%= flight.airline %></div>
     <div>Airport: </div>
-    <div><%= flight.airport %></div>
+    <ul>
+      <%- flight.airport.map(d => 
+        `<li>${d.airport}</li>`
+      ) %>
+    </ul>
     <div>Flight Number: </div>
     <div><%= flight.flightNo %></div>
     <div>Departure: </div>
