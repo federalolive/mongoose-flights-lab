@@ -1,4 +1,4 @@
-* {
+ * {
   box-sizing: border-box;
   font-family: Helvetica;
   font-size: 1.2rem;
@@ -10,14 +10,16 @@ body {
   height: 100vh;
   display: grid;
   grid-template-rows: 50px 1fr;
-  grid-template-areas:
+  grid-template-areas: 
     "nav"
-    "main"
+    "main";
+  text-align: center;
+  
 }
 
 body > nav {
   grid-area: nav;
-  background-color: midnightblue;
+  background-color:midnightblue;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -36,7 +38,6 @@ body > main {
   flex-direction: column;
   align-items: center;
   background-color:cornflowerblue;
-  color: red;
   padding: 20px;
   overflow-y: scroll;
 }
@@ -67,7 +68,9 @@ nav > a.active {
   grid-template-columns: repeat(2, minmax(auto, 22rem));
 }
 
-#new-form *,  #add-flight-form * {
+#new-form *,
+#add-flight-form *,
+#add-destination-form * {
   font-size: 20px;
   padding: 5px;
   border-radius: 5px;
@@ -86,13 +89,12 @@ table {
 table thead th {
   padding: 5px;
   border-bottom: 2px solid #424748;
-  font-size: 1.2rem;
 }
 
 table td {
-  font-size: 1.2rem;
   padding: 10px;
   text-align: center;
+  
 }
 
 #list td:nth-child(2), #list td:nth-child(3){
@@ -104,7 +106,7 @@ table td {
   background-color: #B8C0C2;
   padding: 4px;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 14px;
 }
 
 #list a:hover {
@@ -121,22 +123,34 @@ table td {
   font-weight: bold;
 }
 
- #add-flight-form {
-   display: grid;
-   grid-template-columns: auto auto;
-   grid-gap: 1rem;
- }
+#add-flight-form,
+#add-destination-form {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+  margin-bottom: 2rem;
+}
 
- #add-flight-form input[type="submit"] {
-   width: 8rem;
-   grid-column: 2 / 3;
-   margin-bottom: 2rem;
- }
+#add-flight-form input[type="submit"],
+#add-destination-form input[type="submit"] {
+  width: 10rem;
+  grid-column: 2 / 3;
+}
 
- button {
-   background-color: black;
- }
+ul {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
 
- .submitBtn {
-   background-color: black;
- }
+li {
+  font-weight: bold;
+}
+button {
+  background-color: black;
+}
+
+.submitBtn {
+  background-color: black;
+
+}
