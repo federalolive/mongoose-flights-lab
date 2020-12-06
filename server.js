@@ -28,8 +28,8 @@ app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/flights', flightsRouter);
+app.use('/destinations', destinationsRouter);
 app.use('/', ticketsRouter);
-app.use('/', destinationsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
