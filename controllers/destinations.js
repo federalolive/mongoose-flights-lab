@@ -4,7 +4,8 @@ const Flight = require('../models/flight')
 module.exports = {
     new: newDestination,
     create,
-    addToDestinations
+    addToDestinations,
+    delete: deleteDestination,
 }
 
 function newDestination(req, res){
@@ -25,4 +26,10 @@ function addToDestinations(req, res){
           res.redirect(`/flights/${flight._id}`);
         });
       });
+}
+
+function deleteDestination(req, res){
+    Destination.findByIdAndDelete(req.params.id)
+        console.log('ERRORS')
+        res.redirect('/destinations/new')
 }
