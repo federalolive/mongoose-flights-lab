@@ -15,6 +15,7 @@ function create(req, res) {
 }
 
 function deleteTicket(req, res){
+    console.log('WHY YOU COME HERE')
     Flight.findById(req.params.flightId)
     .then((flight) => {
         const idx = flight.tickets.findIndex(ticket => ticket._id == req.params.ticketId)

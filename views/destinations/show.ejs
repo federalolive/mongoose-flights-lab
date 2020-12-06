@@ -5,7 +5,7 @@
     <div><%= destination.airport %></div>
     <div>ID:</div>
     <div><%= destination._id %> </div><br>
-    <form action="/<%= destination._id%>?_method=DELETE" class='delete-form' method="POST">
+    <form action="/destinations/<%= destination._id%>?_method=DELETE" class='delete-form' method="POST">
         <button type='submit'>X</button>
     </form>
 </section>

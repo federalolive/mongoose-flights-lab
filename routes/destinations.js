@@ -6,6 +6,6 @@ router.get('/destinations/new', destinationsCtrl.new);
 router.post('/destinations', destinationsCtrl.create);
 router.post('/flights/:id/destinations', destinationsCtrl.addToDestinations);
 router.get('/destinations/:id', destinationsCtrl.show)
-router.delete('destinations/:id', destinationsCtrl.delete);
+router.delete('/destinations/:id', destinationsCtrl.deleteDestination);
 
 module.exports = router
