@@ -16,11 +16,7 @@
         <% destinations.forEach(function(d) { %>
         <tr>
             <td><%= d.airport %><br></td>
-            <td>
-            <form action="destination/<%= d.id %>?_method=DELETE" class='delete-form' method="POST">
-                <button type='submit'>X</button>
-            </form>
-            </td>
+            <td><a href="/destinations/<%= d._id %>"  class='link'>DETAILS</a></td>
         <% }) %>
       </tr>
  </tbody>

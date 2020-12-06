@@ -5,6 +5,7 @@ module.exports = {
     new: newDestination,
     create,
     addToDestinations,
+    show,
     delete: deleteDestination,
 }
 
@@ -28,8 +29,16 @@ function addToDestinations(req, res){
       });
 }
 
+function show(req, res){
+    Destination.findById(req.params.id, function(err, destination){
+        res.render('destinations/show', {title: 'Destination Detail', destination})
+    })
+}
+
 function deleteDestination(req, res){
-    Destination.findByIdAndDelete(req.params.id)
+    console.log('Banananq')
+    Destination.findByIdAndDelete(req.params.id, function(err, destinations){
         console.log('ERRORS')
         res.redirect('/destinations/new')
+    })
 }
