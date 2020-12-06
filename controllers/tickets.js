@@ -5,6 +5,7 @@ module.exports = {
     create,
     deleteTicket,
 }
+
 function create(req, res) {
     Flight.findById(req.params.id, function(err, flight){
         flight.tickets.push(req.body)
@@ -15,7 +16,7 @@ function create(req, res) {
 }
 
 function deleteTicket(req, res){
-    
+    console.log(req.params)
     Flight.findById(req.params.flightId)
     .then((flight) => {
         const idx = flight.tickets.findIndex(ticket => ticket._id == req.params.ticketId)
