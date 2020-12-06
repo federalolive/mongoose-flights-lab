@@ -4,7 +4,7 @@ const destinationsCtrl = require('../controllers/destinations')
 
 router.get('/new', destinationsCtrl.new);
 router.post('/', destinationsCtrl.create);
-router.post('/flights/:id/destinations', destinationsCtrl.addToDestinations);
+router.post('/flights/:id', destinationsCtrl.addToDestinations);
 router.get('/:id', destinationsCtrl.show)
 router.delete('/:id', destinationsCtrl.deleteDestination);
 
