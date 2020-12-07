@@ -28,7 +28,6 @@ function show(req, res){
 function deleteDestination(req, res){
     console.log('Banananq')
     Destination.findByIdAndDelete(req.params.id, function(err, destinations){
-        console.log('ERRORS')
         res.redirect('/destinations/new')
     })
 }
