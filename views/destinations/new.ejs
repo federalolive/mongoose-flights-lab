@@ -1,11 +1,12 @@
 <%- include('../partials/head') %> 
-<p>Please first ensure that the Destination is not in the dropdown:</p>
+<p>Please first ensure that the Destination is not in the dropdown:
     <select>
-      <% destinations.forEach(function(d) { %>
-        <option><%= d.destination %></option>
+        <% destinations.forEach(function(d) { %>
+            <%= destinations %> 
+            <option><%= d.destination %></option>
       <% }) %>
     </select>
-  </p>
+</p>
   <form id="add-destination-form" action="/destinations" method="POST">
     <label>Destination:</label>
     <input type="text" name="destination" oninput="this.value = this.value.toUpperCase()" maxlength="3">
