@@ -9,7 +9,7 @@
     <div>Departure: </div>
     <div><%= flight.departs %></div>
     <div>Destination: </div><br>
-      <%- flight.destination.map(d => 
+      <%- flight.destination.map((d) => 
         `${d.destination}`
       ) %>
     <form id="add-destination-to-airport" action="/flights/<%= flight._id %>/destinations" method="POST">
