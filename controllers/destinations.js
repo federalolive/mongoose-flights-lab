@@ -13,6 +13,7 @@ function newDestination(req, res){
         res.render('destinations/new', {title: 'Add Destination', destinations})
     })
 }  
+
 function create(req, res){
     Destination.create(req.body, function(err, destinations){
         res.redirect('/destinations/new')
@@ -26,7 +27,6 @@ function show(req, res){
 }
 
 function deleteDestination(req, res){
-    console.log('Banananq')
     Destination.findByIdAndDelete(req.params.id, function(err, destinations){
         res.redirect('/destinations/new')
     })
